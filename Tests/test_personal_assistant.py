@@ -60,10 +60,6 @@ def test_alternate_data_type_complete():
     result = lst.complete_todos()
     assert result == [task]
 
-
-
-
-
 def test_change_phone_number():
     contact_name = "Phoebe"
     phone_number = "555-1234"
@@ -74,8 +70,13 @@ def test_change_phone_number():
     result = pa.contact_list
     assert result == {"Phoebe":"123-4567"}
 
-
-    #  contact = Contacts(contact_name, phone_number)
-    # contact.add_contact()
-    # contact.update_number(contact_name, new_number)
-    # assert contact.phone_number == ("123-4567")
+def test_call_contact_retrieve_one_number():
+    contact_name = "Rory"
+    phone_number = "777-1234"
+    contact_name_two = "Kirk"
+    phone_number_two = "555-9876"
+    contacts = Personal_assistant()
+    contacts.add_contact(contact_name, phone_number)
+    contacts.add_contact(contact_name_two, phone_number_two)
+    result = contacts.call_contact(contact_name)
+    assert result == phone_number

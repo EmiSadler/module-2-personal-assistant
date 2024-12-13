@@ -33,7 +33,7 @@ class Personal_assistant:
         pass
     def call_contact(self, contact_name):
         # returns the phone number for the given contact_name
-        pass
+        return (self.contact_list[contact_name])
     def get_all_contacts(self):
         # returns a list of all contacts and their phone numbers
         pass
